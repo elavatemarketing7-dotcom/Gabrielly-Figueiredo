@@ -3,7 +3,7 @@ export const EXPERT_DATA = {
   name: "Gabrielly Figueiredo",
   profession: "Harmonização Facial",
   address: "📍Nova Mamoré l Guajará-Mirim |Porto Velho -RO",
-  whatsapp: "https://api.whatsapp.com/send/?phone=5569992974949&text&type=phone_number&app_absent=0&utm_source=ig",
+  whatsapp: "https://wa.me/5569992974949",
   instagram: "https://www.instagram.com/dragabriellyfigueiredo/",
 };
 

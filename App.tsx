@@ -23,11 +23,15 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleWhatsAppContact = () => {
+    window.open(EXPERT_DATA.whatsapp, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="min-h-screen bg-[#fafafa]">
       {/* Background Main Site (Visible through overlay sometimes) */}
       <div className={`${currentStep === AppState.MAIN_SITE ? 'block' : 'hidden md:block blur-sm brightness-50 pointer-events-none'}`}>
-        <LandingPage onContact={() => window.location.href = EXPERT_DATA.whatsapp} />
+        <LandingPage onContact={handleWhatsAppContact} />
       </div>
 
       {currentStep === AppState.HOME_OR_QUIZ && (

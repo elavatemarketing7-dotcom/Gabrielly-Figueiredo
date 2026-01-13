@@ -150,7 +150,7 @@ const QuizOverlay: React.FC<QuizOverlayProps> = ({ step, onFinish, onShowResult,
 
   if (step === AppState.RESULT) {
     const whatsappMessage = encodeURIComponent(`Olá Dra Gabrielly! Realizei o diagnóstico no site.\n\nPreferências:\n${QUIZ_QUESTIONS.map((q, i) => `• ${q.text}: ${answers[i]}`).join('\n')}`);
-    const whatsappLink = `https://api.whatsapp.com/send?phone=5569992974949&text=${whatsappMessage}`;
+    const whatsappLink = `https://wa.me/5569992974949?text=${whatsappMessage}`;
 
     return (
       <div className="fixed inset-0 z-[130] bg-premium-champagne flex items-center justify-center overflow-y-auto p-4">
