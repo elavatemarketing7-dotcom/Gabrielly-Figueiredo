@@ -13,10 +13,10 @@
           extend: {
             colors: {
               premium: {
-                champagne: '#F7F3F0',
+                champagne: '#FDFBF9',
                 bronze: '#B08D74',
-                espresso: '#2A2420',
-                gold: '#C5A059',
+                espresso: '#1C1917',
+                gold: '#D4AF37',
                 pearl: '#FFFFFF',
                 sand: '#EAE0D5'
               }
@@ -26,14 +26,14 @@
               sans: ['Inter', 'sans-serif'],
             },
             animation: {
-              'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-              'marquee': 'marquee 40s linear infinite',
-              'float': 'float 6s ease-in-out infinite',
-              'spin-slow': 'spin 12s linear infinite',
+              'fade-up': 'fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'marquee': 'marquee 60s linear infinite',
+              'float': 'float 8s ease-in-out infinite',
+              'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
             },
             keyframes: {
               fadeUp: {
-                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                '0%': { opacity: '0', transform: 'translateY(60px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
               marquee: {
@@ -42,7 +42,11 @@
               },
               float: {
                 '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
+                '50%': { transform: 'translateY(-30px)' },
+              },
+              pulseSoft: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0.6' },
               }
             }
           }
@@ -51,42 +55,54 @@
     </script>
     <style>
       body {
-        background-color: #F7F3F0;
-        color: #2A2420;
+        background-color: #FDFBF9;
+        color: #1C1917;
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
       .editorial-shadow {
-        box-shadow: 0 40px 100px -20px rgba(42, 36, 32, 0.08);
+        box-shadow: 0 50px 100px -20px rgba(28, 25, 23, 0.1);
       }
-      .glass-light {
-        background: rgba(255, 255, 255, 0.7);
+      .glass-premium {
+        background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(176, 141, 116, 0.2);
       }
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .text-balance { text-wrap: balance; }
       
       .paper-card {
         background: #FFFFFF;
-        border: 1px solid rgba(176, 141, 116, 0.1);
-        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 1px solid rgba(176, 141, 116, 0.08);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .paper-card:hover {
-        border-color: rgba(176, 141, 116, 0.3);
-        transform: translateY(-8px);
+        border-color: rgba(176, 141, 116, 0.2);
+        transform: translateY(-12px);
+        box-shadow: 0 40px 80px -15px rgba(28, 25, 23, 0.05);
       }
       
       .bronze-gradient {
-        background: linear-gradient(135deg, #B08D74 0%, #2A2420 100%);
+        background: linear-gradient(135deg, #B08D74 0%, #1C1917 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
+      .gold-shimmer {
+        background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+        background-size: 200% 100%;
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
       
-      .staggered-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 2rem;
-        align-items: start;
+      ::selection {
+        background-color: #1C1917;
+        color: #FDFBF9;
       }
     </style>
   <script type="importmap">
